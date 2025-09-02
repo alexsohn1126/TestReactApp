@@ -7,7 +7,8 @@ import * as Sentry from '@sentry/react';
 function ErrorButton() {
   return (
     <button onClick={() => {
-      throw new Error("helloooo im a new errorrrrrr")
+      // find the answer to the universe
+      console.log(0/0);
     }}>
       Break the world
     </button>
