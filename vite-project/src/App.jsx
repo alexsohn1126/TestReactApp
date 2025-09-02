@@ -4,13 +4,12 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import * as Sentry from '@sentry/react';
 
-function recurseforever() {
-  return recurseforever()
-}
-
 function ErrorButton() {
   return (
-    <button onClick={recurseforever()}>
+    <button onClick={
+      const invalid = new Date("nothing");
+      invalid.toISOString(); // RangeError: invalid date
+    }>
       Break the world
     </button>
   );
