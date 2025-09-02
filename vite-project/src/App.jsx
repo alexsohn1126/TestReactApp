@@ -6,7 +6,9 @@ import * as Sentry from '@sentry/react';
 
 function ErrorButton() {
   return (
-    <button onClick={fakeFunc()}>
+    <button onClick={() => {
+      throw new Error("helloooo im a new errorrrrrr")
+    }}>
       Break the world
     </button>
   );
