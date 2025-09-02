@@ -7,7 +7,10 @@ import * as Sentry from '@sentry/react';
 function ErrorButton() {
   return (
     <button onClick={() => {
-      (77.1234).toExponential(-1); // RangeError
+      const a = BigInt("1.5");
+      const b = BigInt("1n");
+      const c = BigInt.asIntN(4, "8n");
+      // SyntaxError: invalid BigInt syntax
     }}>
       Break the world
     </button>
