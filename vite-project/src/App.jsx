@@ -6,10 +6,10 @@ import * as Sentry from '@sentry/react';
 
 function ErrorButton() {
   return (
-    <button onClick={
+    <button onClick={() => {
       const invalid = new Date("nothing");
       invalid.toISOString(); // RangeError: invalid date
-    }>
+    }}>
       Break the world
     </button>
   );
