@@ -7,8 +7,25 @@ import * as Sentry from '@sentry/react';
 function ErrorButton() {
   return (
     <button onClick={() => {
-      const invalid = new Date("nothing");
-      invalid.toISOString(); // RangeError: invalid date
+      new Array(2 ** 40);
+      new Array(-1);
+      new ArrayBuffer(2 ** 32); // 32-bit system
+      new ArrayBuffer(-1);
+
+      const a = [];
+      a.length -= 1; // set the length property to -1
+
+      const b = new Array(2 ** 32 - 1);
+      b.length += 1; // set the length property to 2^32
+      b.length = 2.5; // set the length property to a floating-point number
+
+      const c = new Array(2.5); // pass a floating-point number
+
+      // Concurrent modification that accidentally grows the array infinitely
+      const arr = [1, 2, 3];
+      for (const e of arr) {
+        arr.push(e * 10);
+      }
     }}>
       Break the world
     </button>
