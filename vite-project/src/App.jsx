@@ -4,12 +4,13 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import * as Sentry from '@sentry/react';
 
+function recurseforever() {
+  return recurseforever()
+}
+
 function ErrorButton() {
   return (
-    <button onClick={() => {
-      // find the answer to the universe
-      console.log(0/0);
-    }}>
+    <button onClick={recurseforever()}>
       Break the world
     </button>
   );
